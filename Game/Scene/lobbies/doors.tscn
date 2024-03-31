@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://npklm5bt3pge"]
+
+[ext_resource type="PackedScene" uid="uid://chempm5181m53" path="res://Game/Scene/door.tscn" id="2_gi7hk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiq6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mok8d"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26ccd"]
+size = Vector2(21, 20)
+
+[node name="Doors" type="Node2D"]
+
+[node name="Door_registrar" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(310, -505)
+destination_level_tag = "registrar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_registrar"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_tiq6q")
+
+[node name="Door_counselor" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(310, -632)
+destination_level_tag = "counsel"
+destination_door_tag = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_counselor"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_tiq6q")
+
+[node name="Door_clinic" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(739, -977)
+destination_level_tag = "clinic"
+destination_door_tag = "2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_clinic"]
+position = Vector2(-3, -0.5)
+shape = SubResource("RectangleShape2D_mok8d")
+
+[node name="Door_canteenD" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(721, -1135)
+destination_level_tag = "canteenD"
+destination_door_tag = "3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_canteenD"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_mok8d")
+
+[node name="Door_canteenU" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(721, -1215)
+destination_level_tag = "canteenU"
+destination_door_tag = "4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_canteenU"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mok8d")
+
+[node name="Door_cashier" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(440, -424)
+destination_level_tag = "cash"
+destination_door_tag = "5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_cashier"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_26ccd")
+
+[node name="Door_kinderf" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(507, -1119)
+destination_level_tag = "kinderf"
+destination_door_tag = "6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_kinderf"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_26ccd")
+
+[node name="Door_kinderb" parent="." instance=ExtResource("2_gi7hk")]
+position = Vector2(28, -1135)
+destination_level_tag = "kinderb"
+destination_door_tag = "7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_kinderb"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_26ccd")

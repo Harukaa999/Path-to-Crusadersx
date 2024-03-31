@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwve88fdnrjdn"]
+[gd_scene load_steps=5 format=3 uid="uid://mbgsurtnllpl"]
 
-[ext_resource type="Script" path="res://Game/1_st_floor.gd" id="1_a77tj"]
-[ext_resource type="PackedScene" uid="uid://cuhfrl1tekbar" path="res://Game/Tilemaps/Rooms/tile_map_1st_floor.tscn" id="1_yymvh"]
-[ext_resource type="Script" path="res://Game/Registrar Door.gd" id="3_844w5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrc6r"]
-size = Vector2(14, 26)
+[ext_resource type="Script" path="res://Game/1_st_floor.gd" id="1_akfih"]
+[ext_resource type="PackedScene" uid="uid://cuhfrl1tekbar" path="res://Game/Tilemaps/Rooms/tile_map_1st_floor.tscn" id="2_04fow"]
+[ext_resource type="PackedScene" uid="uid://npklm5bt3pge" path="res://Game/Scene/lobbies/doors.tscn" id="3_nb5q4"]
+[ext_resource type="PackedScene" uid="uid://dmh7qo6jfia0n" path="res://Game/player.tscn" id="4_1nm80"]
 
 [node name="1st Floor" type="Node2D"]
-script = ExtResource("1_a77tj")
+script = ExtResource("1_akfih")
 
 [node name="1st Floor" type="StaticBody2D" parent="."]
 
@@ -40,22 +38,9 @@ z_index = 6
 position = Vector2(100, -1)
 polygon = PackedVector2Array(-69, -68, -69, -45, -41, -45, -41, -68)
 
-[node name="TileMap" parent="1st Floor" instance=ExtResource("1_yymvh")]
+[node name="TileMap" parent="1st Floor" instance=ExtResource("2_04fow")]
 
-[node name="Counselor\'s Office Door" type="Area2D" parent="1st Floor"]
-position = Vector2(302, -629)
+[node name="Doors" parent="." instance=ExtResource("3_nb5q4")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="1st Floor/Counselor\'s Office Door"]
-shape = SubResource("RectangleShape2D_lrc6r")
-
-[node name="Registrar Door" type="Area2D" parent="1st Floor"]
-position = Vector2(302, -503)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("3_844w5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="1st Floor/Registrar Door"]
-shape = SubResource("RectangleShape2D_lrc6r")
-
-[connection signal="body_entered" from="1st Floor/Registrar Door" to="1st Floor/Registrar Door" method="_on_body_entered"]
-[connection signal="body_exited" from="1st Floor/Registrar Door" to="1st Floor/Registrar Door" method="_on_body_exited"]
+[node name="player" parent="." instance=ExtResource("4_1nm80")]
+position = Vector2(4, -1131)

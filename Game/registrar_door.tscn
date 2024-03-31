@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://b5lc12inbewcg"]
-
-[node name="Registrar Door" type="Area2D"]
-
-[node name="Marker2D" type="Marker2D" parent="."]
